@@ -1,0 +1,20 @@
+[Unit]
+Description=Ares Control (private dashboard)
+After=network-online.target tailscaled.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/.openclaw/workspace/ares-control-app
+Environment=NODE_ENV=production
+Environment=HOST=0.0.0.0
+Environment=PORT=3030
+Environment=ARES_BASIC_USER=bryce
+# Set via override: systemctl edit ares-control
+Environment=ARES_BASIC_PASS=CHANGE_ME_NOW
+ExecStart=/usr/bin/npm run start -- --hostname 0.0.0.0 --port 3030
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
