@@ -6,3 +6,5 @@
 - Next: scan ClawHub for high-leverage skills (monitoring, inbox, calendar, automation).
 - ClawHub quick hits (automation): omnifocus-automation, home-assistant, clawflows, activecampaign.
 - ClawHub quick hits (monitoring): security-monitor, topic-monitor, task-status, virus-monitor, uptime-kuma.
+- ClawHub quick hits (calendar): calendar (generic), caldav-calendar (vdirsyncer+khal), calcurse.
+- ClawHub quick hits (email): email (generic), imap-smtp-email (low maturity), imap-email (installed locally), google-workspace.
