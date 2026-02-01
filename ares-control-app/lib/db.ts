@@ -44,7 +44,27 @@ function migrate(d: Database.Database) {
       taskId text
     );
 
+    create table if not exists reviews (
+      id text primary key,
+      taskId text not null,
+      role text not null,
+      content text not null,
+      createdAt text not null
+    );
+
+    create table if not exists artifacts (
+      id text primary key,
+      taskId text not null,
+      kind text not null,
+      title text not null,
+      body text not null,
+      meta text,
+      createdAt text not null
+    );
+
     create index if not exists idx_tasks_status on tasks(status);
     create index if not exists idx_events_ts on events(ts);
+    create index if not exists idx_reviews_task on reviews(taskId);
+    create index if not exists idx_artifacts_task on artifacts(taskId);
   `);
 }

@@ -87,7 +87,7 @@ export function Kanban({ refreshToken }: { refreshToken: number }) {
                   <div key={t.id} className="rounded-md border bg-card p-3">
                     <div className="flex items-start justify-between gap-3">
                       <div className="min-w-0">
-                        <div className="text-sm font-medium truncate">{t.title}</div>
+                        <a href={`/task/${t.id}`} className="text-sm font-medium truncate hover:underline">{t.title}</a>
                         <div className="mt-1 flex items-center gap-2">
                           <Badge variant="outline" className="text-xs">{t.threadId}</Badge>
                           <Badge variant="secondary" className="text-xs">{pri(t.priority)}</Badge>
