@@ -4,3 +4,5 @@
 - Browser automation: installed vercel-labs/agent-browser (CLI) as fallback/augment to OpenClaw browser tool.
 - Community: OpenClaw Discord invite appears to be https://discord.com/invite/clawd (source: DEV post referencing openclaw/openclaw).
 - Next: scan ClawHub for high-leverage skills (monitoring, inbox, calendar, automation).
+- ClawHub quick hits (automation): omnifocus-automation, home-assistant, clawflows, activecampaign.
+- ClawHub quick hits (monitoring): security-monitor, topic-monitor, task-status, virus-monitor, uptime-kuma.

@@ -1,0 +1,7 @@
+# Local skill/cache dirs (do not commit)
+.clawhub/
+skills/
+
+# OS/editor
+.DS_Store
+*.swp
