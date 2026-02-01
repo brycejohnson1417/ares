@@ -5,6 +5,7 @@
 - **Pronouns:**
 - **Timezone:** America/New_York (Eastern)
 - **Notes:** Owner / primary operator. Prioritize Bryce requests.
+- **Comms preference:** Telegram for proactive pings.
 
 ## Context
 - Keep comms terse and results-focused.
