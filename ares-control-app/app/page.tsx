@@ -1,11 +1,18 @@
+"use client";
+
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CreateTaskButton } from "@/components/create-task";
+import { Kanban } from "@/components/kanban";
+import { LiveFeed } from "@/components/live-feed";
 
 export default function Home() {
+  const [refreshToken, setRefreshToken] = useState(0);
+
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-6xl px-6 py-10">
-        <div className="flex items-center justify-between gap-6">
+      <div className="mx-auto max-w-[1600px] px-6 py-8">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-3">
               <h1 className="text-2xl font-semibold tracking-tight">Ares Control</h1>
@@ -15,41 +22,22 @@ export default function Home() {
               Truth-first cognition engine. Threaded. Auditable. Replayable.
             </p>
           </div>
-          <div className="text-right">
-            <div className="text-xs text-muted-foreground">status</div>
-            <div className="text-sm font-medium">online</div>
+          <div className="flex items-center gap-3">
+            <CreateTaskButton onCreated={() => setRefreshToken((x) => x + 1)} />
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-sm font-medium">Mission Queue</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Inbox → Assigned → In Progress → Review → Done
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-sm font-medium">Peer Review</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              Producer → Critic → Editor → Verifier → Judge
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-sm font-medium">Compaction Guard</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground">
-              State seals + checkpoints to prevent silent drift.
-            </CardContent>
-          </Card>
+        <div className="mt-6 grid gap-4 xl:grid-cols-[1fr_420px]">
+          <div>
+            <Kanban refreshToken={refreshToken} />
+          </div>
+          <div>
+            <LiveFeed refreshToken={refreshToken} />
+          </div>
         </div>
 
-        <div className="mt-8 rounded-lg border bg-card p-4 text-sm text-muted-foreground">
-          Next: auth wall + kanban + thread IDs + deterministic compiler + live feed.
+        <div className="mt-6 text-xs text-muted-foreground">
+          Next: peer-review protocol UI + deterministic compiler artifacts + compaction state seals.
         </div>
       </div>
     </main>
